@@ -5,8 +5,8 @@ import clsx from 'clsx';
 import { Article } from './components/article/Article';
 import { ArticleParamsForm } from './components/article-params-form/ArticleParamsForm';
 import {
-  ArticleStateType,
-  defaultArticleState,
+	ArticleStateType,
+	defaultArticleState,
 } from './constants/articleProps';
 
 import './styles/index.scss';
@@ -16,35 +16,36 @@ const domNode = document.getElementById('root') as HTMLDivElement;
 const root = createRoot(domNode);
 
 const App = () => {
-  const [articleState, setArticleState] = useState<ArticleStateType>(defaultArticleState);
-  const [isFormOpen, setIsFormOpen] = useState(false);
+	const [articleState, setArticleState] =
+		useState<ArticleStateType>(defaultArticleState);
+	const [isFormOpen, setIsFormOpen] = useState(false);
 
-  const handleFormBtnClick = () => setIsFormOpen((prevState) => !prevState);
+	const handleFormBtnClick = () => setIsFormOpen((prevState) => !prevState);
 
-  const handleFormSubmit = (state: ArticleStateType) => setArticleState(state);
+	const handleFormSubmit = (state: ArticleStateType) => setArticleState(state);
 
-  const dynamicStyles: CSSProperties & { [key: string]: string } = {
-    '--font-family': articleState.fontFamilyOption.value,
-    '--font-size': articleState.fontSizeOption.value,
-    '--font-color': articleState.fontColor.value,
-    '--container-width': articleState.contentWidth.value,
-    '--bg-color': articleState.backgroundColor.value,
-  };
+	const dynamicStyles: CSSProperties & { [key: string]: string } = {
+		'--font-family': articleState.fontFamilyOption.value,
+		'--font-size': articleState.fontSizeOption.value,
+		'--font-color': articleState.fontColor.value,
+		'--container-width': articleState.contentWidth.value,
+		'--bg-color': articleState.backgroundColor.value,
+	};
 
-  return (
-    <div className={clsx(styles.main)} style={dynamicStyles}>
-      <ArticleParamsForm
-        isOpen={isFormOpen}
-        onFormBtnClick={handleFormBtnClick}
-        onFormSubmit={handleFormSubmit}
-      />
-      <Article />
-    </div>
-  );
+	return (
+		<div className={clsx(styles.main)} style={dynamicStyles}>
+			<ArticleParamsForm
+				isOpen={isFormOpen}
+				onFormBtnClick={handleFormBtnClick}
+				onFormSubmit={handleFormSubmit}
+			/>
+			<Article />
+		</div>
+	);
 };
 
 root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>
+	<StrictMode>
+		<App />
+	</StrictMode>
 );
