@@ -14,13 +14,11 @@ export const Button = ({
 	type?: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
 }) => {
 	return (
-		<button
-			className={clsx(styles.button, styles[`button_${type}`])}
-			type={type}
-			onClick={onClick}>
-			<Text weight={800} uppercase>
-				{title}
-			</Text>
+		<button className={clsx(styles.button, styles[`button_${type}`])}
+		type={type} onClick={onClick}>
+		<Text weight={800} uppercase>
+			{title}
+		</Text>
 		</button>
 	);
 };
