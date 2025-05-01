@@ -1,19 +1,42 @@
 .button {
-  cursor: pointer;
-  display: flex;
-  width: 210px;
-  height: 50px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  box-sizing: border-box;
-  border: 1px solid #000;
+	cursor: pointer;
+	display: flex;
+	width: 210px;
+	height: 50px;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	box-sizing: border-box;
+	border: 1px solid #000;
+  }
+
+.button_submit {
+	background-color: var(--gold, #FFC802);
+	color: var(--text-color, #000); 
+}
+
+.button_submit:hover {
+	background-color: var(--hover-color, #FFEDAB);
+}
+
+.button_reset {
+	background-color: var(--reset-background, transparent);
+	color: var(--text-color, #000);
+	border: 1px solid var(--reset-border-color, #000);
+}
+
+.button_reset:hover {
+	background-color: var(--hover-background, #000);
+}
+
+.button_reset:hover > div {
+	color: var(--hover-text-color, #FFFFFF);
 }
 
 .button:active {
-  background: var(--gold, #ffc802);
+	background-color: var(--gold, #FFC802);
 }
 
 .button:hover {
-  background: var(--gold, #ffc802);
+	background-color: var(--gold, #FFC802);
 }
